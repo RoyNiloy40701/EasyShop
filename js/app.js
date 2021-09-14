@@ -280,7 +280,7 @@ const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
   if (priceConverted > 0) {
     setInnerText("delivery-charge", 20);
-    
+
   }
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
