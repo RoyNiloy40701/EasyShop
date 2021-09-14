@@ -223,7 +223,19 @@ const loadProducts = () => {
   showProducts(data);
 };
 
-
+{
+  /* <div class="card-group">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div> */
+}
 // show all product in UI 
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
@@ -231,18 +243,19 @@ const showProducts = (products) => {
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product   ">
-      <div>
-    <img class="product-image" src=${image}></img>
-      </div>
+    div.innerHTML = `<div class="single-product card   ">
+     
+    <img class="product-image  " src=${image}></img>
+      <div class="card-body">
       <h4 class="mb-0">${product.title}</h4>
       <p class="mb-0" >Category: ${product.category}</p>
       <h2 class="mb-0">Price: $ ${product.price}</h2>
       <p class="mb-0">Rating: <span class='text-danger fw-bold  fs-5'>${product.rating.rate}</span></p>
       <p> <span class='text-danger  fw-bold'>${product.rating.count}</span> peoples rated this item</p>
-     
+      </div>
+      <div class="card-footer">
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <button id="details-btn" class="btn btn-danger">Details</button></div></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
